@@ -34,3 +34,7 @@ public class LongestPalindromeSubstring {
         System.out.println("Longest Palindromic Substring: " + longestPalindrome(input));
     }
 }
+
+Outout: 
+
+Longest Palindromic Substring: aba
