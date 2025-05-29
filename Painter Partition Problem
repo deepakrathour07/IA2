@@ -1,0 +1,49 @@
+public class PainterPartition {
+
+    public static boolean isPossible(int[] boards, int k, int maxTime) {
+        int painters = 1;
+        int total = 0;
+
+        for (int length : boards) {
+            if (length > maxTime) return false;
+
+            if (total + length > maxTime) {
+                painters++;
+                total = length;
+            } else {
+                total += length;
+            }
+        }
+
+        return painters <= k;
+    }
+
+    public static int minTimeToPaint(int[] boards, int k) {
+        int low = 0, high = 0;
+        for (int board : boards) {
+            low = Math.max(low, board);  
+            high += board;               
+        }
+
+        int result = high;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (isPossible(boards, k, mid)) {
+                result = mid;      
+                high = mid - 1;    
+            } else {
+                low = mid + 1;
+            }
+        }
+
+        return result;
+    }
+
+    public static void main(String[] args) {
+        int[] boards = {10, 20, 30, 40};
+        int painters = 2;
+        System.out.println("Minimum time to paint: " + minTimeToPaint(boards, painters));
+    }
+}
