@@ -36,3 +36,6 @@ public class SecondLargestElement {
         }
     }
 }
+
+Output: 
+Second largest element is: 40
