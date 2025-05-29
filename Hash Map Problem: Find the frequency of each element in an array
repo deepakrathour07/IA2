@@ -14,3 +14,11 @@ public class FrequencyCounter {
         }
     }
 }
+
+Output: 
+
+Element Frequencies:
+1 occurs 2 times
+2 occurs 3 times
+3 occurs 2 times
+4 occurs 1 times
