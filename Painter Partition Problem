@@ -47,3 +47,7 @@ public class PainterPartition {
         System.out.println("Minimum time to paint: " + minTimeToPaint(boards, painters));
     }
 }
+
+Output: 
+
+Minimum time to paint: 60
